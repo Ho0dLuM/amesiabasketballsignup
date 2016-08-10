@@ -2,16 +2,8 @@ $(document).ready(function() {
   $('#calendar').fullCalendar({
   });
 });
-/*
-neat comments!
-there may be some places where another function could be created for the conditionals, but I'm not sure if that would break your code or not.
-good stuff!
-*/
+
 //Add e-mail to cell
-
-// var emailObj = ajaxCall(apiUrl);
-// var apiUrl = 'https://us1.api.mailchimp.com/3.0/automations/1cd819280d/emails/2117f379e7/queue'
-
 
   $('#calendar').fullCalendar({
     dayClick: function(date, cell) {
@@ -37,14 +29,11 @@ good stuff!
     //console.log(cellFind);
       if(cellFind === true) {
       $.ajax({
-        url: 'https://us1.api.mailchimp.com/3.0/automations/1cd819280d/emails/2117f379e7/queue',
-  				type: 'POST',
-          dataType: 'JSON',
-  				data: {
-                apikey: '9e6c86ce5121df997998a5feb8d25ee9-us1',
-  				      email: 'jordon.hoshor@gmail.com',
-                status: 'subscribed'
-  				      },
+        url: 'http://textbelt.com/text',
+        type: 'POST',
+        number: '5152916435',
+        message: 'Will this work? Probably not because I wrote it.',
+
   				success: function(data){
   					alert('success')
   				},
@@ -55,21 +44,7 @@ good stuff!
       };
     });
   }
-//mailchimp APi key = 9e6c86ce5121df997998a5feb8d25ee9-us1
 
-
-
-//$.post('https://us1.api.mailchimp.com/3.0/automations/1cd819280d/emails/2117f379e7/queue', function() {
-
-//   $.post( "example.php", function() {
-//     alert( "success" );
-//   })
-//
-//
-// function ajaxCall(url) {
-//   return Promise.resolve($.ajax(apiUrl));
-// }
-//
 
   // document.addEventListener("contextmenu", function(e) {
   //   e.preventDefault();
@@ -97,25 +72,6 @@ good stuff!
   //         $('emailToRemove').remove();
   //     });
   //   });
-
-
-
- //you can inspect the click event
-//
-//     $this = $('.cmenu');
-//
-//     if (e.which === 3){ // right click = 3, left click = 1
-//         $this.addClass('open');
-//         $this.css({
-//             'left': e.pageX - $this.width() / 2,
-//             'top': e.pageY - $this.height()
-//         });
-//     }else{
-//         $this.removeClass('open');
-//     }
-// });
-
-
 
 
   // $('td.fc-day').filter(function (index, element) {
