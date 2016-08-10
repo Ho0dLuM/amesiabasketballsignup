@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBall Signup</title>
-    <!-- styles -->
+    <!-- Styles -->
+    <link rel='stylesheet' href='./src/css/fullcalendar.css' />
     <link rel="stylesheet" type="text/css" href="./src/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./src/css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/calendar.css">
     <link rel="stylesheet" type="text/css" href="./src/css/main.css">
   </head>
   <body>
@@ -23,20 +23,22 @@
           </div>
         </nav>
     </header>
-  <div>
-  </div>
-<!-- <iframe src="https://calendar.google.com/calendar/embed?title=Basketball%20Schedule&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc00&amp;src=pm65l6gmlivs8q9qth1o3utg5c%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FDenver" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-    <div class="row"> -->
-  <div id="authorize-div" style="display: none">
-    <span>Authorize access to Google Calendar API</span>
-    <!--Button for the user to click to initiate auth sequence -->
-    <button id="authorize-button" onclick="handleAuthClick(event)">
-      Authorize
-    </button>
-  </div>
-  <pre id="output"></pre>
-    <!-- scripts -->
+    <div id='calendar'></div><br><br>
+    <div class="row"></div>
+      <div>
+        <form class="col-10">
+          <label for="text">Remove Email</label>
+          <input type="text" id="removeEmail">
+          <label for="date">From This Date</label>
+          <input type="text" id="date">
+          <button type="submit" id="remove">Remove</button>
+        </form>
+      </div>
+    <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src='./src/js/jquery.min.js'></script>
+    <script src='./src/js/moment.min.js'></script>
+    <script src='./src/js/fullcalendar.js'></script>
     <script type="text/javascript" src="./src/js/main.js"></script>
   </body>
 </html>
