@@ -62,6 +62,9 @@ $(document).ready(function() {
 
   //   function confirmEight() {
   //     $('td.fc-day').filter(function(index, element) {
-  //     var eightPeople =
+  //       var eightPeople = $(element).text() === 'jordon.hoshor@gmail.com' + 'Jh@k.com';
+  //       if(eightPeople === true) {
+  //         $(this).css({'background-color':'#37CC04'});
+  //       }
   //   });
   // };
