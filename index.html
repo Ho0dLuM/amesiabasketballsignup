@@ -23,13 +23,23 @@
           </div>
         </nav>
     </header>
-    <div id='calendar'></div><br><br>
-    <div class="row"></div>
+      <div class="row">
+        <h2 class="col-12">Left click to sign up to play on a certain day. Right click to remove your name.</h2>
+      </div>
+    <div id='calendar'></div>
+      <footer class="col-12">
+        <h3 class="col-12">Ames, Ia City Hall. The Place We Play.</h3>
+        <img src="./src/assets/amesiacityhall.jpg">
+          <div id="googleMap" class="map">
+          </div>
+      </footer>
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./src/js/footer.js"></script>
     <script src='./src/js/jquery.min.js'></script>
     <script src='./src/js/moment.min.js'></script>
     <script src='./src/js/fullcalendar.js'></script>
+    <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB3MVGRLb0_lCMZqVb5lVHLXKNWVUYbx98&callback=initMap"></script>
     <script type="text/javascript" src="./src/js/main.js"></script>
   </body>
 </html>

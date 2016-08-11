@@ -30,3 +30,22 @@
     padding: 15px;
     border: 1px solid #2D2D2D;
 }
+
+h2.col-12 {
+  text-align: center;
+  background-color: orange;
+}
+h3.col-12 {
+  text-align: center;
+  background-color: orange;
+}
+img {
+  float: left;
+  width:50%;
+  height: 350px;
+}
+.map {
+  float: right;
+  width: 50%;
+  height: 350px;
+}

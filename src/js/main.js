@@ -59,11 +59,11 @@ $(document).ready(function() {
         return;
       } else {
         $('td.fc-day').filter(function (index, element) {
-          element.innerHTML = '';
-          $(this).css({'background-color':'#FFFFFF'})
+            element.innerHTML = '';
+          $(this).css({'background-color':'#FFFFFF'});
         });
-    }
-  });
+      };
+    });
 
   //   function confirmEight() {
   //     $('td.fc-day').filter(function(index, element) {
