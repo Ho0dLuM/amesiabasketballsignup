@@ -12,12 +12,14 @@ $(document).ready(function() {
         var atPos = userEmail.indexOf('@');
         var dotPos = userEmail.lastIndexOf('.');
         if(userEmail === 0 || atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= userEmail.length) {
+          alert('Not a valid e-mail!')
           return;
         } else {
           //when validation passes
         $(cell.target).append(userEmail + '<br>');
         $(this).css({'background-color':'#CC0000'})
         cellCheck();
+        //confirmEight();
       }
     }
   });
@@ -31,11 +33,10 @@ $(document).ready(function() {
       $.ajax({
         url: 'http://textbelt.com/text',
         type: 'POST',
-        number: '5152916435',
-        message: 'Will this work? Probably not because I wrote it.',
-
-  				success: function(data){
-  					alert('success')
+        number: '7203339928',
+        message: 'Game is on tomorrow!',
+  				success: function(data) {
+  					console.log('success');
   				},
   				error: function(err) {
   					console.log('fail', err);
@@ -45,38 +46,27 @@ $(document).ready(function() {
     });
   }
 
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  }, false);
+  document.addEventListener("contextmenu", function(e) {
+    var removeEmail = window.prompt('Enter your Email for removal');
+    //console.log(removeEmail);
+    var atPos = removeEmail.indexOf('@');
+    var dotPos = removeEmail.lastIndexOf('.');
+      if (e.which === 3 && removeEmail === 0 || atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= removeEmail.length) {
+        alert('Learn to type more better!');
+        return;
+      } else {
+        $('td.fc-day').filter(function (index, element) {
+          element.innerHTML = '';
+          $(this).css({'background-color':'#000000'})
+        });
+    }
+  });
 
-  // document.addEventListener("contextmenu", function(e) {
-  //   e.preventDefault();
-  // }, false);
-  // document.addEventListener("contextmenu", function(e) {
-  //   var removeEmail = window.prompt('Enter your Email for removal');
-  //   var atPos = removeEmail.indexOf('@');
-  //   var dotPos = removeEmail.lastIndexOf('.');
-  //     if (e.which === 3) {
-  //   } else if(removeEmail === 0 || atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= removeEmail.length) {
-  //     return;
-  //   } else {
-  //     removeEmail.replace(0, '');
-  //   }
-  // });
-
-
-  // //Remove email from cell listener
-  //   $('form').on('submit', function(event) {
-  //     event.preventDefault();
-  //     var emailToRemove = $('#removeEmail').val();
-  //     //console.log(emailToRemove);
-  //     $('td.fc-day').filter(function (index, element) {
-  //       $(element).text() === emailToRemove;
-  //         $('emailToRemove').remove();
-  //     });
+  //   function confirmEight() {
+  //     $('td.fc-day').filter(function(index, element) {
+  //     var eightPeople =
   //   });
-
-
-  // $('td.fc-day').filter(function (index, element) {
-  //   return $(element).text() === 'email@email.com'
-  // })
-  // $('td.fc-day').filter(function (index, element) {
-  //   console.log(element.innerHTML);
-  // });
+  // };
