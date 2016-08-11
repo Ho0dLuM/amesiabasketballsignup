@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   $('#calendar').fullCalendar({
     dayClick: function(date, cell) {
-      var userEmail = window.prompt('Enter your E-mail adress to sign up to play on ' + date.format());
+      var userEmail = window.prompt('Enter your E-mail address to sign up to play on ' + date.format());
         //validate input from prompt
         var atPos = userEmail.indexOf('@');
         var dotPos = userEmail.lastIndexOf('.');
@@ -24,27 +24,22 @@ $(document).ready(function() {
     }
   });
 
-//watcher function start
+//watcher functions start
   function cellCheck() {
     $('td.fc-day').filter(function (index, element) {
     var cellFind = $(element).text() === 'jordon.hoshor@gmail.com';
     //console.log(cellFind);
       if(cellFind === true) {
-      $.ajax({
-        url: 'http://textbelt.com/text',
-        type: 'POST',
-        number: '7203339928',
-        message: 'Game is on tomorrow!',
-  				success: function(data) {
-  					console.log('success');
-  				},
-  				error: function(err) {
-  					console.log('fail', err);
-  				}
+      $.post('http://textbelt.com/text',
+        {
+        number: '5152903780',
+        message: 'Game is on tomorrow!'
+       }).done(function(data) {
+  			  console.log('success');
         });
       };
     });
-  }
+  };
 
   document.addEventListener("contextmenu", function(e) {
     e.preventDefault();
