@@ -17,8 +17,8 @@ $(document).ready(function() {
         } else {
           //when validation passes
         $(cell.target).append(userEmail + '<br>');
-        $(this).css({'background-color':'#CC0000'})
-        cellCheck();
+        $(this).css({'background-color':'#CC0000'});
+          cellCheck();
         //confirmEight();
       }
     }
@@ -32,10 +32,12 @@ $(document).ready(function() {
       if(cellFind === true) {
       $.post('http://textbelt.com/text',
         {
-        number: '5152903780',
+        number: '7209873456',
         message: 'Game is on tomorrow!'
        }).done(function(data) {
-  			  console.log('success');
+         console.log(data);
+  			  $(element).append('<p>Text message sent successfully</p>');
+          $(element).css({'background-color':'#37CC04'})
         });
       };
     });
@@ -62,9 +64,10 @@ $(document).ready(function() {
 
   //   function confirmEight() {
   //     $('td.fc-day').filter(function(index, element) {
-  //       var eightPeople = $(element).text() === 'jordon.hoshor@gmail.com' + 'Jh@k.com';
+  //       var eightPeople = $(element).innerHTML === 'Text message sent successfully';
+  //       console.log(eightPeople);
   //       if(eightPeople === true) {
-  //         $(this).css({'background-color':'#37CC04'});
+  //         $(element).css({'background-color':'#37CC04'});
   //       }
   //   });
   // };
