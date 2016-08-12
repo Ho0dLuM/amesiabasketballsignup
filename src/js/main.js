@@ -7,36 +7,36 @@ $(document).ready(function() {
 
   $('#calendar').fullCalendar({
     dayClick: function(date, cell) {
+      cellCheck();
       var userEmail = window.prompt('Enter your E-mail address to sign up to play on ' + date.format());
         //validate input from prompt
         var atPos = userEmail.indexOf('@');
         var dotPos = userEmail.lastIndexOf('.');
         if(userEmail === 0 || atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= userEmail.length) {
-          alert('Not a valid e-mail!')
+          alert('Not a valid e-mail!');
           return;
         } else {
           //when validation passes
         $(cell.target).append(userEmail + '<br>');
         $(this).css({'background-color':'#CC0000'});
-          cellCheck();
-        //confirmEight();
+        confirmEight();
       }
     }
   });
 
 //watcher functions start
   function cellCheck() {
-    $('td.fc-day').filter(function (index, element) {
+    $('td.fc-widget-content').filter(function (index, element) {
     var cellFind = $(element).text() === 'jordon.hoshor@gmail.com';
     //console.log(cellFind);
       if(cellFind === true) {
       $.post('http://textbelt.com/text',
         {
-        number: '7209873456',
+        number: '5152916435',
         message: 'Game is on tomorrow!'
        }).done(function(data) {
          console.log(data);
-  			  $(element).append('<p>Text message sent successfully</p>');
+  			  $(element).append('<p>Text message sent successfully, Game is on!</p>');
           $(element).css({'background-color':'#37CC04'})
         });
       };
@@ -62,12 +62,12 @@ $(document).ready(function() {
       };
     });
 
-  //   function confirmEight() {
-  //     $('td.fc-day').filter(function(index, element) {
-  //       var eightPeople = $(element).innerHTML === 'Text message sent successfully';
-  //       console.log(eightPeople);
-  //       if(eightPeople === true) {
-  //         $(element).css({'background-color':'#37CC04'});
-  //       }
-  //   });
-  // };
+    function confirmEight() {
+      $('td.fc-day').filter(function(index, element) {
+        var eightPeople = $(element).innerHTML === 'Text message sent successfully';
+        console.log(eightPeople);
+        if(eightPeople === true) {
+          $(element).css({'background-color':'#37CC04'});
+        }
+    });
+  };
