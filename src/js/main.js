@@ -16,7 +16,7 @@ $(document).ready(function() {
           return;
         } else {
           //when validation passes
-        $(cell.target).append(userEmail + '<br>');
+        $(cell.target).append('<div>' + userEmail + '</div>');
         $(this).css({'background-color':'#CC0000'});
         confirmEight();
       }
@@ -30,7 +30,7 @@ $(document).ready(function() {
       if(cellFind === true) {
       $.post('http://textbelt.com/text',
         {
-        number: '5152916435',
+        number: '7209873456',
         message: 'Game is on tomorrow!'
        }).done(function(data) {
          console.log(data);
