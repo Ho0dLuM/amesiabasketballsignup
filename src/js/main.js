@@ -4,7 +4,6 @@ $(document).ready(function() {
 });
 
 //Add e-mail to cell
-
   $('#calendar').fullCalendar({
     dayClick: function(date, cell) {
       cellCheck();
@@ -28,7 +27,6 @@ $(document).ready(function() {
   function cellCheck() {
     $('td.fc-widget-content').filter(function (index, element) {
     var cellFind = $(element).text() === 'jordon.hoshor@gmail.com';
-    //console.log(cellFind);
       if(cellFind === true) {
       $.post('http://textbelt.com/text',
         {
@@ -48,7 +46,6 @@ $(document).ready(function() {
   }, false);
   document.addEventListener("contextmenu", function(e) {
     var removeEmail = window.prompt('Enter your Email for removal');
-    //console.log(removeEmail);
     var atPos = removeEmail.indexOf('@');
     var dotPos = removeEmail.lastIndexOf('.');
       if (e.which === 3 && removeEmail === 0 || atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= removeEmail.length) {
@@ -65,7 +62,6 @@ $(document).ready(function() {
     function confirmEight() {
       $('td.fc-day').filter(function(index, element) {
         var eightPeople = $(element).innerHTML === 'Text message sent successfully';
-        console.log(eightPeople);
         if(eightPeople === true) {
           $(element).css({'background-color':'#37CC04'});
         }
