@@ -30,7 +30,7 @@ $(document).ready(function() {
       if(cellFind === true) {
       $.post('http://textbelt.com/text',
         {
-        number: '7209873456',
+        number: '',
         message: 'Game is on tomorrow!'
        }).done(function(data) {
          console.log(data);
