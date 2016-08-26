@@ -33,8 +33,7 @@ $(document).ready(function() {
         number: '',
         message: 'Game is on tomorrow!'
        }).done(function(data) {
-         console.log(data);
-  			  $(element).append('<p>Text message sent successfully, Game is on!</p>');
+  		    $(element).append('<p>Text message sent successfully, Game is on!</p>');
           $(element).css({'background-color':'#37CC04'})
         });
       };
